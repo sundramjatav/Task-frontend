@@ -25,7 +25,7 @@ const Login = () => {
 
     try {
       // Send the form data to the API
-      const response = await axios.post('http://localhost:3000/auth/login', data);
+      const response = await axios.post('https://task-backend-2-577a.onrender.com/auth/login', data);
       console.log(response.data);
 
       if (response.data.success) {

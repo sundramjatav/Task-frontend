@@ -17,7 +17,7 @@ const EditInventory = () => {
         const fetchInventoryById = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get(`http://localhost:3000/task/find/${id}`, {
+                const response = await axios.get(`https://task-backend-2-577a.onrender.com/task/find/${id}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const EditInventory = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:3000/task/update/${id}`, formData, {
+            await axios.put(`https://task-backend-2-577a.onrender.com/task/update/${id}`, formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',

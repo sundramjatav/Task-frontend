@@ -10,7 +10,7 @@ const Home = () => {
     // handleDelete function
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/task/delete/${id}`,
+            await axios.delete(`https://task-backend-2-577a.onrender.com/task/delete/${id}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -35,7 +35,7 @@ const Home = () => {
     useEffect(() => {
         const fetchInventory = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/task/find-inventory',
+                const response = await axios.get('https://task-backend-2-577a.onrender.com/task/find-inventory',
                     {
                         headers: {
                             'Authorization': `Bearer ${token}`,
