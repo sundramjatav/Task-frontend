@@ -25,7 +25,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://task-backend-2-577a.onrender.com/auth/register', data);
+      const response = await axios.post('https://backend-task-c21p.onrender.com/auth/register', data);
       console.log(response.data.success,"form bahars e");
 
       if (response.data.success) {

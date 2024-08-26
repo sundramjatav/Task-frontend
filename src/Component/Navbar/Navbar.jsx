@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const isAuthenticated = !!localStorage.getItem('token'); // Check if the token exists
 
     const handleLogout = () => {
@@ -12,10 +13,24 @@ const Navbar = () => {
 
     return (
         <div className='nav'>
-            <Link to={'/'}><h1>Inventory Management System</h1></Link>
             <div className='nav-part'>
-                <Link to={'/QR-generate'}> <h3>Generate QR Code</h3></Link>
-                <Link to={'/QR-scan'}> <h3>Scan QR Code</h3></Link>
+                <Link to={'/'}>
+                    <h1>Inventory Management System</h1>
+                </Link>
+                {/* Only show Admin link if on home page */}
+                {location.pathname !== '/dashboard' && (
+                    <Link to={'/dashboard'}>
+                        <h1>Admin</h1>
+                    </Link>
+                )}
+            </div>
+            <div className='nav-part'>
+                <Link to={'/QR-generate'}>
+                    <h3>Generate QR Code</h3>
+                </Link>
+                <Link to={'/QR-scan'}>
+                    <h3>Scan QR Code</h3>
+                </Link>
             </div>
             <div className='nav-part'>
                 {isAuthenticated ? (

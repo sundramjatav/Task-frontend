@@ -10,7 +10,7 @@ const Home1 = () => {
     // handleDelete function
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://task-backend-2-577a.onrender.com/task/delete/${id}`,
+            await axios.delete(`https://backend-task-c21p.onrender.com/task/delete/${id}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,

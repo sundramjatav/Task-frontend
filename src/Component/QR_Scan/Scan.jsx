@@ -31,7 +31,7 @@ const Scan = () => {
 
       try {
         const response = await axios.post(
-          "https://task-backend-2-577a.onrender.com/task/scan-inventory", 
+          "https://backend-task-c21p.onrender.com/task/scan-inventory", 
           formData, 
           {
             headers: {

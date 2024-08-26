@@ -23,7 +23,7 @@ const Generate = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://task-backend-2-577a.onrender.com/task/create-inventory', formData,
+            const response = await axios.post('https://backend-task-c21p.onrender.com/task/create-inventory', formData,
               {  headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json', 
