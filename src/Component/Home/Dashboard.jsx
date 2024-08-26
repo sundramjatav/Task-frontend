@@ -3,7 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-const Home1 = () => {
+const Dashboard = () => {
     const [data, setData] = useState([]);
     const token = localStorage.getItem('token')
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ const Home1 = () => {
     useEffect(() => {
         const fetchInventory = async () => {
             try {
-                const response = await axios.get('https://task-backend-2-577a.onrender.com/task/find-inventory',
+                const response = await axios.get('https://task-backend-2-577a.onrender.com/task/findAll-inventory',
                     {
                         headers: {
                             'Authorization': `Bearer ${token}`,
@@ -44,7 +44,7 @@ const Home1 = () => {
                     }
                 );
                 setData(response.data.allInventory); // Update the state with fetched data
-                // console.log(response.data, "allInventory");
+                console.log(response.data, "findAll-inventory");
             } catch (error) {
                 console.error("Error fetching inventory data:", error);
             }
@@ -110,4 +110,4 @@ const Home1 = () => {
     );
 }
 
-export default Home1;
+export default Dashboard;

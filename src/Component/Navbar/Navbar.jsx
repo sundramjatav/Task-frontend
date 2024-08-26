@@ -6,8 +6,8 @@ const Navbar = () => {
     const isAuthenticated = !!localStorage.getItem('token'); // Check if the token exists
 
     const handleLogout = () => {
-        localStorage.removeItem('token'); // Remove the token to log out
-        navigate('/login'); // Redirect to the login page
+        localStorage.removeItem('token');
+        window.location.href = '/login'; // Redirect to the login page
     };
 
     return (
