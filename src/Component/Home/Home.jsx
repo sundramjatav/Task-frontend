@@ -43,8 +43,8 @@ const Home1 = () => {
                         },
                     }
                 );
-                setData(response.data.allInventory); // Update the state with fetched data
-                // console.log(response.data, "allInventory");
+                setData(response.data.userInventory); // Update the state with fetched data
+                console.log(response.data.userInventory, "userInventory");
             } catch (error) {
                 console.error("Error fetching inventory data:", error);
             }
